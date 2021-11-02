@@ -1,0 +1,11 @@
+{
+    "nom":"Figo",
+    "edat":14,
+    "notaMitja":6.9,
+    "assignaturaPreferida":{
+        "codi":"M10",
+        "nom":"ERP",
+        "horesSetmana":536
+    },
+    "vots":[true,true,true]
+}

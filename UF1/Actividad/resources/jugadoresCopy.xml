@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<joc>
+	<jugadors>
+		<jugador>
+			<configuracio>
+				<mode_daltonic>false</mode_daltonic>
+				<resolucio_pantalla>1920x1024</resolucio_pantalla>
+				<tipus_controlador>KeyboardMouse</tipus_controlador>
+			</configuracio>
+			<inicials>FUN</inicials>
+			<nom>Dani Fernandez</nom>
+			<posicio>1</posicio>
+			<puntuacions>
+				<puntuacio>123</puntuacio>
+				<puntuacio>123</puntuacio>
+				<puntuacio>123</puntuacio>
+				<puntuacio>666</puntuacio>
+				<puntuacio>69420</puntuacio>
+			</puntuacions>
+		</jugador>
+		<jugador>
+			<configuracio>
+				<mode_daltonic>true</mode_daltonic>
+				<resolucio_pantalla>1920x1080</resolucio_pantalla>
+				<tipus_controlador>KeyboardMouse</tipus_controlador>
+			</configuracio>
+			<inicials>ABC</inicials>
+			<nom>Pedro Pepito</nom>
+			<posicio>2</posicio>
+			<puntuacions>
+				<puntuacio>654</puntuacio>
+				<puntuacio>5001</puntuacio>
+			</puntuacions>
+		</jugador>
+		<jugador>
+			<configuracio>
+				<mode_daltonic>true</mode_daltonic>
+				<resolucio_pantalla>1920x1080</resolucio_pantalla>
+				<tipus_controlador>KeyboardMouse</tipus_controlador>
+			</configuracio>
+			<inicials>DFE</inicials>
+			<nom>ADFA ADFA</nom>
+			<posicio>5</posicio>
+			<puntuacions>
+				<puntuacio>453</puntuacio>
+				<puntuacio>12</puntuacio>
+			</puntuacions>
+		</jugador>
+		<jugador>
+			<configuracio>
+				<mode_daltonic>true</mode_daltonic>
+				<resolucio_pantalla>1920x1080</resolucio_pantalla>
+				<tipus_controlador>KeyboardMouse</tipus_controlador>
+			</configuracio>
+			<dni>37462468Z</dni>
+			<inicials>CDA</inicials>
+			<nom>AAG GGa</nom>
+			<posicio>4</posicio>
+			<puntuacions>
+				<puntuacio>43</puntuacio>
+				<puntuacio>5000</puntuacio>
+			</puntuacions>824
+		</jugador>
+	</jugadors>
+</joc>

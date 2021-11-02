@@ -1,0 +1,71 @@
+<institut>
+	<nom> Institut Sabadell </nom>
+	<alumnes>
+		<alumne>
+			<nom>Joan</nom>
+			<cognoms>Perez Rubarte</cognoms>
+			<DNI>48923793D</DNI>
+			<adreca>Carrer de les Flors, 4, Sabadell</adreca>
+			<telefons>
+				<telefon>665340559</telefon>
+			</telefons>
+			<mail>joanperez@gmail.com</mail>
+		</alumne>
+		<alumne>
+			<nom>Marco</nom>
+			<cognoms>Frias Estrella</cognoms>
+			<DNI>48923794E</DNI>
+			<adreca>Carrer Juvenal, 1, Sabadell</adreca>
+			<telefons>
+				<telefon>665440559</telefon>
+				<telefon>832443829</telefon>
+				<telefon>839443829</telefon>
+			</telefons>
+			<mail>friasemblem@gmail.com</mail>
+		</alumne>
+		<alumne>
+			<nom>Dani</nom>
+			<cognoms>Sunyer Gea</cognoms>
+			<DNI>44423793D</DNI>
+			<adreca>Carrer del Cul del Mon, 4, Polinya</adreca>
+			<telefons>
+				<telefon>66536659</telefon>
+				<telefon>832663829</telefon>
+			</telefons>
+			<mail>foreverbronze@gmail.com</mail>
+		</alumne>
+		<alumne>
+			<nom>Marta</nom>
+			<cognoms>Naranjo Oliviera</cognoms>
+			<DNI>48923755D</DNI>
+			<adreca>Carrer Siddy, 7, Sabadell</adreca>
+			<telefons>
+				<telefon>665777779</telefon>
+			</telefons>
+			<mail>martanaranjo@gmail.com</mail>
+			</alumne>
+		<alumne>
+			<nom>Maria</nom>
+			<cognoms>De Be</cognoms>
+			<DNI>48927793D</DNI>
+			<adreca>Carrer SQL, 10, Sabadell</adreca>
+			<telefons>
+				<telefon>665999959</telefon>
+				<telefon>839999929</telefon>
+			</telefons>
+			<mail>mysqlnogracias@gmail.com</mail>
+		</alumne>
+			<alumne>
+			<nom>Marc</nom>
+			<cognoms>Albareda Sirvent</cognoms>
+			<DNI>28923792Z</DNI>
+			<adreca>Plaza Espanya, 4, Sabadell</adreca>
+			<telefons>
+				<telefon>666666666</telefon>
+				<telefon>999999999</telefon>
+				<telefon>888888888</telefon>
+			</telefons>
+			<mail>perotunoeresprofessor@gmail.com</mail>
+		</alumne>
+	</alumnes>
+</institut>

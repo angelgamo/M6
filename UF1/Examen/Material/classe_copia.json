@@ -1,0 +1,52 @@
+{
+    "alumnes": [
+      {
+        "notaMitja": 9.2,
+        "assignaturaPreferida": {
+          "horesSetmana": 3,
+          "nom": "acces a Dades",
+          "codi": "M6"
+        },
+        "nom": "Pau",
+        "edat": 19,
+        "vots": [
+          true,
+          true,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "notaMitja": 6.9,
+        "assignaturaPreferida": {
+          "horesSetmana": 536,
+          "nom": "ERP",
+          "codi": "M10"
+        },
+        "nom": "Figo",
+        "edat": 14,
+        "vots": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "notaMitja": 9.9,
+        "assignaturaPreferida": {
+          "horesSetmana": 7,
+          "nom": "Programacio de Videojocs",
+          "codi": "M17"
+        },
+        "nom": "Iker",
+        "edat": 31,
+        "vots": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "nom": "2DAMvi"
+  }

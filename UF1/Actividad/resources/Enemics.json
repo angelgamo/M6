@@ -1,0 +1,23 @@
+  [
+	{ 
+	"nom": "Goomba",
+	"elite": false,
+	"puntsBase": 2,
+	"numMorts": 5,
+	"bonus": [1,1.5,0.7,2,0.5]
+	},
+	{ 
+	"nom": "Goomba1",
+	"elite": false,
+	"puntsBase": 2,
+	"numMorts": 5,
+	"bonus": [1,1.5,0.7,2,0.5]
+	},
+	{ 
+	"nom": "GoombaPro",
+	"elite": true,
+	"puntsBase": 2,
+	"numMorts": 5,
+	"bonus": [1,1.5,0.7,2,0.5]
+	}
+]

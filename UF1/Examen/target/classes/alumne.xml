@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<alumne>
+    <nom>Figo</nom>
+    <edat>14</edat>
+    <notaMitja>6.9</notaMitja>
+    <assignaturaPreferida codi="M10">
+    <nom>ERP</nom>
+    <horesSetmana>536</horesSetmana>
+    </assignaturaPreferida>
+    <vots>
+    <vot>true</vot>
+    <vot>true</vot>
+    <vot>true</vot>
+    </vots>
+</alumne>
