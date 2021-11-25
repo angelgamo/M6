@@ -1,6 +1,7 @@
 package Monopoly;
 
 import java.util.List;
+import java.util.Set;
 
 public class JugadorDao extends GenericDao<Jugador, Integer> implements IJugadorDao {
 
@@ -12,6 +13,8 @@ public class JugadorDao extends GenericDao<Jugador, Integer> implements IJugador
 	@Override
 	public boolean Comprar(Jugador j, Propiedad p) {
 		
+		PropiedadDao pd = new PropiedadDao();
+		
 		if(p.getPropietario() != null){
 			return false;
 		}
@@ -20,8 +23,50 @@ public class JugadorDao extends GenericDao<Jugador, Integer> implements IJugador
 		
 		this.modificarDiners(j, -costPropietat);
 		p.setPropietario(j);
+		Set<Propiedad> propiedades = j.getPropiedades();
+		propiedades.add(p);
+		j.setPropiedades(propiedades);
+		j.setnPropiedades(j.getnPropiedades()+1);
+		this.saveOrUpdate(j);
+		pd.saveOrUpdate(p);
 		return true;
 	}
+	
+	@Override
+	public boolean Comprar(Jugador j, Ferrocarril f) {
+		
+		FerrocarrilDao fd = new FerrocarrilDao();
+		
+		if(f.getPropietario() != null){
+			return false;
+		}
+		
+		int costPropietat = f.getPrecio();
+		
+		this.modificarDiners(j, -costPropietat);
+		f.setPropietario(j);
+		j.getPropiedades().add(f);
+		j.setnPropiedades(j.getnPropiedades()+1);
+		this.saveOrUpdate(j);
+		fd.saveOrUpdate(f);
+		return true;
+	}
+	
+	@Override
+	public boolean ComprovarColor(Propiedad p) {
+		PropiedadDao pd = new PropiedadDao();
+		Color c = p.getColor();
+		Jugador j = p.getPropietario();
+		boolean flag = true;
+		for (Propiedad pr : c.getPropietats()) {
+			if(!pr.getPropietario().equals(j)) {
+				flag=false;
+			}
+		}
+		pd.saveOrUpdate(p);
+		return flag;
+	}
+
 	
 	@Override
 	public boolean pagarLloguer(Jugador j, Propiedad p) {
@@ -51,41 +96,99 @@ public class JugadorDao extends GenericDao<Jugador, Integer> implements IJugador
 				this.modificarDiners(p.getPropietario(), p.getAlquilerHotel());
 				return true;
 		}
+		this.saveOrUpdate(j);
 		return false;
 	}
 	
 	@Override
-	public int edificar(Jugador j, Propiedad p) {
-		if (p.getPrecio_por_casa() < j.getDinero() && p.nCasas < 5) {
-
-			this.modificarDiners(j, -p.getPrecio_por_casa());
-			p.setnCasas(p.getnCasas() + 1);
+	public boolean pagarLloguer(Jugador j, Ferrocarril f) {
+		int nEstaciones = 0;
+		Jugador propietario = f.getPropietario();
+		for (Propiedad p : propietario.getPropiedades()) {
+			if (p instanceof Ferrocarril) {
+				nEstaciones++;
+			}
 		}
-		return p.nCasas;
+		if (nEstaciones != 0) {
+			this.modificarDiners(j, -(nEstaciones*25));
+			this.modificarDiners(j, (nEstaciones*25));
+			return true;
+		}
+		this.saveOrUpdate(j);
+		return false;
 	}
+	
+	/*
+	@Override
+	public int edificar(Jugador j, Propiedad p) {
+		PropiedadDao pd = new PropiedadDao();
+		if (p.getnCasas() < 5) {
+			if(ComprovarColor(p)) {
+				this.modificarDiners(j, -p.getPrecio_por_casa());
+				p.setnCasas(p.getnCasas() + 1);
+			}
+		}
+		this.saveOrUpdate(j);
+		pd.saveOrUpdate(p);
+		return p.getnCasas();
+	}
+	*/
 
 	@Override
 	public int modificarDiners(Jugador j, int diners) {
 		j.setDinero(j.getDinero()+diners);
+		this.saveOrUpdate(j);
 		return j.getDinero();}
 
 	@Override
 	public boolean hipotecar(Jugador j, Propiedad p) {
+		PropiedadDao pd = new PropiedadDao();
 		if (j.getPropiedades().contains(p) && !p.isHipotecado()) {
 			this.modificarDiners(j, p.getPrecio_hipoteca());
 			p.setHipotecado(true);
 			return true;
 		}
+		this.saveOrUpdate(j);
+		pd.saveOrUpdate(p);
+		return false;
+	}
+	
+	@Override
+	public boolean hipotecar(Jugador j, Ferrocarril f) {
+		FerrocarrilDao fd = new FerrocarrilDao();
+		if (j.getPropiedades().contains(f) && !f.isHipotecado()) {
+			this.modificarDiners(j, f.getPrecio_hipoteca());
+			f.setHipotecado(true);
+			return true;
+		}
+		this.saveOrUpdate(j);
+		fd.saveOrUpdate(f);
 		return false;
 	}
 	
 	@Override
 	public boolean deshipotecar(Jugador j, Propiedad p) {
+		PropiedadDao pd = new PropiedadDao();
 		if (j.getPropiedades().contains(p) && p.isHipotecado() && j.getDinero() > p.getPrecio_hipoteca()) {
 			this.modificarDiners(j, -p.getPrecio_hipoteca());
 			p.setHipotecado(false);
 			return true;
 		}
+		this.saveOrUpdate(j);
+		pd.saveOrUpdate(p);
+		return false;
+	}
+	
+	@Override
+	public boolean deshipotecar(Jugador j, Ferrocarril f) {
+		FerrocarrilDao fd = new FerrocarrilDao();
+		if (j.getPropiedades().contains(f) && f.isHipotecado() && j.getDinero() > f.getPrecio_hipoteca()) {
+			this.modificarDiners(j, -f.getPrecio_hipoteca());
+			f.setHipotecado(false);
+			return true;
+		}
+		this.saveOrUpdate(j);
+		fd.saveOrUpdate(f);
 		return false;
 	}
 
@@ -104,5 +207,10 @@ public class JugadorDao extends GenericDao<Jugador, Integer> implements IJugador
 			return jugadors.get(0);
 		}
 		return null;
+	}
+
+	@Override
+	public int saberPosicion(Jugador j) {
+		return j.getPosicion();
 	}	
 }

@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -27,6 +28,9 @@ public class Jugador {
 	
 	@Column(name="turno")
 	private int turno;
+	
+	@Column(name="posicion")
+	private int posicion;
 	
 	@Column(name="dinero")
 	private int dinero;
@@ -70,6 +74,14 @@ public class Jugador {
 	public void setTurno(int turno) {
 		this.turno = turno;
 	}
+	
+	public int getPosicion() {
+		return posicion;
+	}
+	
+	public void setPosicion(int posicion) {
+		this.posicion = posicion;
+	}
 
 	public int getDinero() {
 		return dinero;
@@ -107,7 +119,7 @@ public class Jugador {
 		return propiedades;
 	}
 
-	public void setPropiedades(HashSet<Propiedad> propiedades) {
+	public void setPropiedades(Set<Propiedad> propiedades) {
 		this.propiedades = propiedades;
 	}
 }

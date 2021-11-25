@@ -24,6 +24,7 @@
 		<!-- AQUI POSEU LES CLASSES QUE REPRESENTEN TAULES QUE FEU SERVIR -->
 		<mapping class="Monopoly.Jugador" />
 		<mapping class="Monopoly.Propiedad" />
+		<mapping class="Monopoly.Ferrocarril" />
 		<mapping class="Monopoly.Color" />
 		
 		

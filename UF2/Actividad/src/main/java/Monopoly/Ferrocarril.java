@@ -14,12 +14,12 @@ public class Ferrocarril extends Propiedad {
 
 	@ManyToMany(cascade = { CascadeType.ALL })
 	    @JoinTable(
-	        name = "ids_vecinos", 
+	        name = "Ferrocarril_Vecinos", 
 	        joinColumns = { @JoinColumn(name = "id_ferrocarril") }, 
 	        inverseJoinColumns = { @JoinColumn(name = "id_vecino") })
-	HashSet<Ferrocarril> vecinoDe;
+	Set<Ferrocarril> vecinoDe;
 	@ManyToMany(mappedBy = "vecinoDe")
-	HashSet<Ferrocarril> vecinos;
+	Set<Ferrocarril> vecinos;
 	
 	public Set<Ferrocarril> getVecinoDe() {
 		return vecinoDe;
@@ -27,7 +27,7 @@ public class Ferrocarril extends Propiedad {
 	public void setVecinoDe(HashSet<Ferrocarril> vecinoDe) {
 		this.vecinoDe = vecinoDe;
 	}
-	public HashSet<Ferrocarril> getVecinos() {
+	public Set<Ferrocarril> getVecinos() {
 		return vecinos;
 	}
 	public void setVecinos(HashSet<Ferrocarril> vecinos) {
